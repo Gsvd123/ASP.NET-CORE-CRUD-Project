@@ -1,0 +1,40 @@
+﻿@model PersonResponse
+@{
+    ViewBag.Title = "Delete Person";
+}
+<div class="margin-auto">
+<h2>Delete Person
+</h2>
+
+<h2>
+    Are you sure want to Delete This Person?
+</h2>
+
+<form asp-controller="Persons" asp-action="Delete" method="post">
+    <div class="w-50">
+
+        <input type="hidden" asp-for="PersonID" />
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PersonName" class="form-label">Person Name</label>
+            </div>
+            <div class="flex-1">
+                <input disabled="disabled" asp-for="PersonName" class="form-input" />
+            </div>
+        </div>
+    <div class="form-field flex">
+        <div class="w-25">
+           
+        </div>
+        <div class="flex-1">
+            <button type="submit"  class="button button-red-back">
+                Delete
+            </button>
+            <a asp-action="index" asp-controller="persons">Back to Persons List</a>
+           
+        </div>
+    </div>
+    </div>
+</form>
+</div>
+
